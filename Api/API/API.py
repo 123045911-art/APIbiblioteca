@@ -62,18 +62,18 @@ class NuevoPrestamo(BaseModel):
 
 #ENDPOINTS DE LIBROS
 # Listar libros
-@app.get("/vi/libros/", tags=['HTTP CRUD LIBROS'])
+@app.get("/v1/libros/", tags=['HTTP CRUD LIBROS'])
 async def VerLibros():
     return {"total": len(libros), "libros": libros, "status": "200"}
 
 #Listar libros disponibles
-@app.get("/vi/libros/disponibles", tags=['HTTP CRUD LIBROS'])
+@app.get("/v1/libros/disponibles", tags=['HTTP CRUD LIBROS'])
 async def VerLibrosDisponibles():
     librosDisponibles = [lb for lb in libros if lb["estado"] == "disponible"]
     return {"total": len(librosDisponibles), "libros": librosDisponibles, "status": "200"}
 
 #Buscar libro por nombre
-@app.get("/vi/libros/buscar", tags=['HTTP CRUD LIBROS'])
+@app.get("/v1/libros/buscar", tags=['HTTP CRUD LIBROS'])
 async def BuscarLibro(nombre: str):
     if not nombre or len(nombre.strip()) < 2:
         raise HTTPException(status_code=400, detail="El nombre del libro no es válido")  
@@ -84,7 +84,7 @@ async def BuscarLibro(nombre: str):
     return {"libros": librosEncontrados, "status": "200"}
 
 #Registrar un libro
-@app.post("/vi/libros/", tags=['HTTP CRUD LIBROS'], status_code=201)
+@app.post("/v1/libros/", tags=['HTTP CRUD LIBROS'], status_code=201)
 async def AgregarLibro(nuevoLibro: Libro):
     if not nuevoLibro.nombre or len(nuevoLibro.nombre.strip()) < 2:
         raise HTTPException(status_code=400, detail="El nombre del libro no es válido o faltan datos")
@@ -101,7 +101,7 @@ async def AgregarLibro(nuevoLibro: Libro):
     }
 
 #ENDOPOINTS DE USUARIOS
-@app.get("/vi/usuarios/",tags=['HTTP CRUD USUARIOS'])
+@app.get("/v1/usuarios/",tags=['HTTP CRUD USUARIOS'])
 async def VerUsuarios():
     return {
         "total":len(usuario),
@@ -109,7 +109,7 @@ async def VerUsuarios():
         "status":"200"
     }
 
-@app.post("/vi/usuarios/",tags=['HTTP CRUD USUARIOS'])
+@app.post("/v1/usuarios/",tags=['HTTP CRUD USUARIOS'])
 async def AgregarUsuario(nuevoUsuario:Usuario):
     for usr in usuario:
         if usr["id"] == nuevoUsuario.id:
@@ -126,7 +126,7 @@ async def AgregarUsuario(nuevoUsuario:Usuario):
 
 #ENDPOINTS DE PRÉSTAMOS
 #Registrar el préstamo de un libro a un usuario
-@app.post("/vi/prestamos/", tags=['HTTP CRUD PRÉSTAMOS'], status_code=201)
+@app.post("/v1/prestamos/", tags=['HTTP CRUD PRÉSTAMOS'], status_code=201)
 async def RegistrarPrestamo(datosPrestamo: NuevoPrestamo):
     #Verificamos si el libro existe
     libroEncontrado = next((lb for lb in libros if lb["id"] == datosPrestamo.idLibro), None)
@@ -156,7 +156,7 @@ async def RegistrarPrestamo(datosPrestamo: NuevoPrestamo):
     return {"mensaje": "Préstamo registrado exitosamente", "idPrestamo": nuevoIdPrestamo, "status": "201"}
 
 #Marcamos un libro como devuelto
-@app.put("/vi/prestamos/devolver/{id_prestamo}", tags=['HTTP CRUD PRÉSTAMOS'], status_code=200)
+@app.put("/v1/prestamos/devolver/{id_prestamo}", tags=['HTTP CRUD PRÉSTAMOS'], status_code=200)
 async def DevolverLibro(idPrestamo: int):
     prestamoEncontrado = next((p for p in prestamos if p["idPrestamo"] == idPrestamo), None)
     
@@ -173,7 +173,7 @@ async def DevolverLibro(idPrestamo: int):
     return {"mensaje": "El libro ha sido devuelto satisfactoriamente", "status": "200"}
 
 #Eliminar el registro de un préstamo
-@app.delete("/vi/prestamos/{id_prestamo}", tags=['HTTP CRUD PRÉSTAMOS'])
+@app.delete("/v1/prestamos/{id_prestamo}", tags=['HTTP CRUD PRÉSTAMOS'])
 async def EliminarRegistroPrestamo(idPrestamo: int):
     prestamoEncontrado = next((p for p in prestamos if p["idPrestamo"] == idPrestamo), None)
     

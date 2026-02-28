@@ -1,0 +1,65 @@
+{
+  "info": {
+    "_postman_id": "16897e9d-0a3f-410e-b197-38cddffbb59f",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Metodo GET Libros",
+      "id": "05d7ef3f-2d4a-4658-836c-df7db0815797",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "127.0.0.1:8000/v1/libros",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "v1",
+            "libros"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mrtodo POST libros",
+      "id": "22ec55e2-82fa-4442-8394-585f685cb696",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 11,\r\n  \"estado\": \"disponible\",\r\n  \"nombre\": \"Romeo y Julieta\",\r\n  \"anio\": 1597,\r\n  \"paginas\": 200\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "127.0.0.1:8000/v1/libros/",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "v1",
+            "libros",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
