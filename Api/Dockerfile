@@ -1,22 +1,18 @@
-#imoprtar imagen base de python
+# Importar imagen base de python
 FROM python:3.12-slim
 
-#Crear en el contenedor la capreta de trabajo
-WORKDIR /api
+# Crear en el contenedor la carpeta de trabajo
+WORKDIR /app
 
-#Copiar los requerimientos al contenedor
+# Copiar los requerimientos al contenedor
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia todo el codigo del servidor
 COPY . .
 
-#Instalamos las dependencias de FASTAPI
-RUN pip install --no-cache-dir -r requirements.txt
-
-#Copia el codigo del servidor 
-COPY ./API .
-
-#Exponer el puerto de trabajo
+# Exponer el puerto de trabajo
 EXPOSE 5000
 
-#Comndo a ejecutar levantar  servidor
-CMD ["uvicorn", "API.main:app", "--host", "0.0.0.0", "--port", "5000","--reload"]
+# Comando a ejecutar para levantar el servidor (NOTA EL CAMBIO A API.API:app)
+CMD ["uvicorn", "API.API:app", "--host", "0.0.0.0", "--port", "5000"]
