@@ -6,7 +6,29 @@
   },
   "item": [
     {
-      "name": "New Request",
+      "name": "ver prestamos",
+      "id": "95d3c878-c7d5-4ea2-aa5c-dd75be207119",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/v1/prestamos/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "prestamos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "realizar prestamo",
       "id": "74e2cb35-5cfa-49e6-a8bf-b4814f316110",
       "request": {
         "method": "POST",
@@ -31,6 +53,91 @@
             "v1",
             "prestamos",
             ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "editar prestamo",
+      "id": "a5f5ec14-d108-4948-8c77-afd30c46073b",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/prestamos/devolver/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "prestamos",
+            "devolver",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "e5c5ee22-a5f3-47d0-8ba0-f355082b3b9b",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idLibro\": 5,\r\n  \"idUsuario\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/prestamos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "prestamos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "eliminar prestamo",
+      "id": "d68b6c43-65bd-4071-bc12-acda1cb1ad29",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/v1/prestamos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "prestamos",
+            "1"
           ]
         }
       },

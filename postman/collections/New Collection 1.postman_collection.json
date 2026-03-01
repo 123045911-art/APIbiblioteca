@@ -28,7 +28,7 @@
       "response": []
     },
     {
-      "name": "New Request",
+      "name": "agregar usuario",
       "id": "22160d35-b109-40a7-8a6b-30ddc1e2fd6c",
       "request": {
         "method": "POST",
@@ -53,6 +53,90 @@
             "v1",
             "usuarios",
             ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "editar usuario",
+      "id": "4dbe52ce-7d30-4d16-bd35-02d4d75bc444",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"nombre\": \"Daniel\",\r\n  \"correo\": \"Daniel@example.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/usuarios/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "199e61e9-29c4-4fd0-8452-c16f89f96964",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"correo\": \"Dan@example.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/usuarios/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "4bd3136e-5043-4cbd-a97c-8c710dee0c02",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/v1/usuarios/10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "usuarios",
+            "10"
           ]
         }
       },

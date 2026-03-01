@@ -27,37 +27,6 @@
       "response": []
     },
     {
-      "name": "Agregar libros",
-      "id": "22ec55e2-82fa-4442-8394-585f685cb696",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": 11,\r\n  \"estado\": \"disponible\",\r\n  \"nombre\": \"Romeo y Julieta\",\r\n  \"anio\": 1597,\r\n  \"paginas\": 200\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:5001/v1/libros/",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "5001",
-          "path": [
-            "v1",
-            "libros",
-            ""
-          ]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "libros disponibles",
       "id": "cec38de0-ed17-4e1f-9f6c-22e55f0233b7",
       "request": {
@@ -110,9 +79,137 @@
             {
               "key": "nombre",
               "value": "quijote",
-              "type": "text",
               "uuid": "ecf1cbd6-3e1d-4129-8653-c1b9d1da9cd1"
+            },
+            {
+              "key": "nombre",
+              "value": "alien",
+              "type": "text",
+              "uuid": "2770e596-4cb7-49ef-bc8c-6ae493d037a6",
+              "disabled": true
+            },
+            {
+              "key": "nombre",
+              "value": "bemberecua",
+              "type": "text",
+              "uuid": "522b8d94-f325-4254-be63-72591688abb1",
+              "disabled": true
             }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar libros",
+      "id": "22ec55e2-82fa-4442-8394-585f685cb696",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 11,\r\n  \"estado\": \"disponible\",\r\n  \"nombre\": \"Romeo y Julieta\",\r\n  \"anio\": 1597,\r\n  \"paginas\": 200\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/libros/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "libros",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Editar libro completo",
+      "id": "d4b93d5c-767c-45f7-a64b-c5058bcd78c4",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 9,\r\n  \"estado\": \"disponible\",\r\n  \"nombre\": \"Bemberecua\",\r\n  \"anio\": 2019,\r\n  \"paginas\": 32\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/libros/9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "libros",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "modificar libro",
+      "id": "d6e8f9dd-b599-4578-abdd-9af2631f473f",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"prestado\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/libros/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "libros",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "eliminar libro",
+      "id": "927a42ff-4066-497a-9cb9-772b3a6d1f20",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/v1/libros/10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "libros",
+            "10"
           ]
         }
       },
