@@ -1,0 +1,62 @@
+{
+  "info": {
+    "_postman_id": "e7604835-c242-4f24-95a9-45db1dafd036",
+    "name": "Usuarios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "mostrar usuarios",
+      "id": "575fc1c1-e188-4700-bfa0-2dfc12c95ed7",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/v1/usuarios/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "22160d35-b109-40a7-8a6b-30ddc1e2fd6c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 5,\r\n  \"nombre\": \"Daniel\",\r\n  \"correo\": \"Daniel@example.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/usuarios/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "usuarios",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

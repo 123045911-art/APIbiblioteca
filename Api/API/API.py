@@ -14,29 +14,33 @@ app= FastAPI(
 
 #TB ficticia
 # BD ficticia de libros
+# BD ficticia de libros
 libros = [
-    {"id": 1, "nombre": "El Quijote", "estado": "disponible", "anio": 1605, "paginas": 1056},
+    {"id": 1, "nombre": "El Quijote", "estado": "prestado", "anio": 1605, "paginas": 1056},
     {"id": 2, "nombre": "Cien años de soledad", "estado": "prestado", "anio": 1967, "paginas": 417},
-    {"id": 3, "nombre": "1984", "estado": "disponible", "anio": 1949, "paginas": 328},
+    {"id": 3, "nombre": "1984", "estado": "prestado", "anio": 1949, "paginas": 328},
     {"id": 4, "nombre": "Un mundo feliz", "estado": "prestado", "anio": 1932, "paginas": 288},
-    {"id": 5, "nombre": "Fahrenheit 451", "estado": "disponible", "anio": 1953, "paginas": 256},
-    {"id": 6, "nombre": "El Señor de los Anillos", "estado": "prestado", "anio": 1954, "paginas": 1178},
+    {"id": 5, "nombre": "Fahrenheit 451", "estado": "prestado", "anio": 1953, "paginas": 256},
+    {"id": 6, "nombre": "El Señor de los Anillos", "estado": "disponible", "anio": 1954, "paginas": 1178},
     {"id": 7, "nombre": "Orgullo y prejuicio", "estado": "disponible", "anio": 1813, "paginas": 432},
-    {"id": 8, "nombre": "Harry Potter y la piedra filosofal", "estado": "prestado", "anio": 1997, "paginas": 254},
+    {"id": 8, "nombre": "Harry Potter y la piedra filosofal", "estado": "disponible", "anio": 1997, "paginas": 254},
     {"id": 9, "nombre": "La sombra del viento", "estado": "disponible", "anio": 2001, "paginas": 575},
-    {"id": 10, "nombre": "El principito", "estado": "prestado", "anio": 1943, "paginas": 96}
+    {"id": 10, "nombre": "El principito", "estado": "disponible", "anio": 1943, "paginas": 96}
 ]
 
-usuario=[
-    {"id":1,"nombre":"Fany","correo":"fany@example.com"},
-    {"id":2,"nombre":"Ali","correo":"ali@example.com"},
-    {"id":3,"nombre":"Dulce","correo":"dulce@example.com"},
-    {"id":4,"nombre":"Carlos","correo":"carlos@example.com"}
+usuario = [
+    {"id": 1, "nombre": "Fany", "correo": "fany@example.com"},
+    {"id": 2, "nombre": "Ali", "correo": "ali@example.com"},
+    {"id": 3, "nombre": "Dulce", "correo": "dulce@example.com"},
+    {"id": 4, "nombre": "Carlos", "correo": "carlos@example.com"}
 ]
 
 prestamos = [
-    {"id_prestamo": 1, "id_libro": 2, "id_usuario": 1},
-    {"id_prestamo": 2, "id_libro": 4, "id_usuario": 2}
+    {"idPrestamo": 1, "idLibro": 1, "idUsuario": 1},
+    {"idPrestamo": 2, "idLibro": 2, "idUsuario": 2},
+    {"idPrestamo": 3, "idLibro": 3, "idUsuario": 2},
+    {"idPrestamo": 4, "idLibro": 4, "idUsuario": 3},
+    {"idPrestamo": 5, "idLibro": 5, "idUsuario": 4}
 ]
 
 #Validamos con ayuda de literal para los estados del libro

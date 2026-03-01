@@ -1,0 +1,40 @@
+{
+  "info": {
+    "_postman_id": "012e30e1-22a8-44fe-b20a-d40ce057752a",
+    "name": "Prestamos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "id": "74e2cb35-5cfa-49e6-a8bf-b4814f316110",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idLibro\": 3,\r\n  \"idUsuario\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/prestamos/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "prestamos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

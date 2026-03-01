@@ -1,25 +1,23 @@
 {
   "info": {
     "_postman_id": "16897e9d-0a3f-410e-b197-38cddffbb59f",
-    "name": "New Collection",
+    "name": "Libros",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Metodo GET Libros",
+      "name": "Todos los libros",
       "id": "05d7ef3f-2d4a-4658-836c-df7db0815797",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "127.0.0.1:8000/v1/libros",
+          "raw": "http://localhost:5001/v1/libros",
+          "protocol": "http",
           "host": [
-            "127",
-            "0",
-            "0",
-            "1"
+            "localhost"
           ],
-          "port": "8000",
+          "port": "5001",
           "path": [
             "v1",
             "libros"
@@ -29,7 +27,7 @@
       "response": []
     },
     {
-      "name": "Mrtodo POST libros",
+      "name": "Agregar libros",
       "id": "22ec55e2-82fa-4442-8394-585f685cb696",
       "request": {
         "method": "POST",
@@ -44,18 +42,77 @@
           }
         },
         "url": {
-          "raw": "127.0.0.1:8000/v1/libros/",
+          "raw": "http://localhost:5001/v1/libros/",
+          "protocol": "http",
           "host": [
-            "127",
-            "0",
-            "0",
-            "1"
+            "localhost"
           ],
-          "port": "8000",
+          "port": "5001",
           "path": [
             "v1",
             "libros",
             ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "libros disponibles",
+      "id": "cec38de0-ed17-4e1f-9f6c-22e55f0233b7",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/v1/libros/disponibles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "libros",
+            "disponibles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar por nombre",
+      "id": "de45daf3-9480-4a69-9433-d545a71832ee",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"detail\": [\r\n    {\r\n      \"loc\": [\r\n        \"string\",\r\n        2\r\n      ],\r\n      \"msg\": \"string\",\r\n      \"type\": \"string\",\r\n      \"input\": \"string\",\r\n      \"ctx\": {}\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5001/v1/libros/buscar?nombre=quijote",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "v1",
+            "libros",
+            "buscar"
+          ],
+          "query": [
+            {
+              "key": "nombre",
+              "value": "quijote",
+              "type": "text",
+              "uuid": "ecf1cbd6-3e1d-4129-8653-c1b9d1da9cd1"
+            }
           ]
         }
       },
